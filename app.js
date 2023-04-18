@@ -1,4 +1,5 @@
-const btnBorrar = document.getElementById("btnBorrar");
+//Metodo para borrar un contacto mediante un input y un boton ejemplo del maestro
+//const btnBorrar = document.getElementById("btnBorrar");
 
 document.addEventListener("DOMContentLoaded", () => {
   cargaContactos();
@@ -34,7 +35,8 @@ agenda.addEventListener("click", (e) => {
     inputNombre.value = e.target.dataset.id;
   }
 });
-
+/*
+Metodo para borrar un contacto mediante un input y un boton ejemplo del maestro
 btnBorrar.addEventListener("click", () => {
   const email = document.getElementById("email").value;
 
@@ -54,6 +56,7 @@ btnBorrar.addEventListener("click", () => {
       console.log("error", error);
     });
 });
+*/
 
 const cargaContactos = () => {
   const options = {
@@ -120,6 +123,7 @@ const insertaContacto = () => {
   })
     .then(async (res) => {
       console.log("create", await res.json());
+      location.reload ()
     })
     .catch((error) => {
       console.log("error", error);
@@ -154,6 +158,7 @@ const actualizaContacto = () => {
   })
     .then(async (res) => {
       console.log("update", await res.json());
+      location.reload ()
     })
     .catch((error) => {
       console.log("error", error);
